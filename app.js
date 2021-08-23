@@ -40,6 +40,19 @@ formContainer.addEventListener("submit", function (e) {
   );
 });
 
+function generatePassword(
+  charAmount,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+) {
+  //console.log(lowercaseCharCodes);
+  let charCodes = lowercaseCharCodes;
+  if (includeNumbers) charCodes = charCodes.concat(numberCharCodes);
+  if (includeSymbols) charCodes = charCodes.concat(symbolCharCodes);
+  if (includeUppercase) charCodes = charCodes.concat(uppercaseCharCodes);
+}
+
 //character codes looping function
 function arrayLowToHigh(low, high) {
   let array = [];
