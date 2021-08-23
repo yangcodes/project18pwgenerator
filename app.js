@@ -5,6 +5,14 @@ const numbersEl = document.querySelector("#numbers");
 const symbolsEl = document.querySelector("#symbols");
 const uppercaseEl = document.querySelector("#uppercase");
 
+const lowercaseCharCodes = arrayLowToHigh(97, 122);
+const numberCharCodes = arrayLowToHigh(48, 57);
+const symbolCharCodes = arrayLowToHigh(33, 47)
+  .concat(58, 64)
+  .concat(91, 96)
+  .concat(123, 126);
+const uppercaseCharCodes = arrayLowToHigh(65, 90);
+
 //syncing range and number inputs
 rangeChar.addEventListener("input", syncCharAmount);
 numberChar.addEventListener("input", syncCharAmount);
@@ -31,3 +39,12 @@ formContainer.addEventListener("submit", function (e) {
     includeSymbols
   );
 });
+
+//character codes looping function
+function arrayLowToHigh(low, high) {
+  let array = [];
+  for (let i = low; i <= high; i++) {
+    array.push(i);
+  }
+  return array;
+}
